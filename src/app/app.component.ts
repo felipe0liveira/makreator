@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'markreator';
+  markdown: string;
+
+  constructor() {
+    this.markdown = localStorage.getItem('markdown') || '';
+    window.addEventListener('beforeunload', function (e) {
+      e.returnValue = '';
+    });
+  }
+
+  markdownChange() {
+    localStorage.setItem('markdown', this.markdown);
+  }
 }

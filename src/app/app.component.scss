@@ -1,0 +1,32 @@
+.app {
+    height: 100vh;
+    header {
+        .logo {
+            width: 400px;
+        }
+    }
+
+    main {
+        display: flex;
+        height: calc(100% - 163px);
+
+        textarea {
+            padding: 15px;
+            background: linear-gradient(17deg, rgba(251, 251, 251, 1) 0%, rgb(236, 236, 236) 100%);
+            width: 40%;
+            border: 0;
+            outline: none;
+            margin-right: 15px;
+            resize: none;
+        }
+
+        markdown {
+            width: 60%;
+            overflow-x: auto;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+}

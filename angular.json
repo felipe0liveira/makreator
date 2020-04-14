@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "markreator": {
@@ -50,6 +50,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/font-awesome/scss/font-awesome.scss",
               "src/styles.scss"
             ],
             "scripts": []
@@ -145,6 +146,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "markreator"
+    }
+  },
+  "defaultProject": "markreator",
+  "cli": {
+    "analytics": "89a50616-31a5-4d64-b886-0c90dd0b0039"
+  }
 }
