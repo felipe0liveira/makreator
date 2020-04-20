@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +11,20 @@ export class AppComponent {
 
   constructor() {
     this.markdown = localStorage.getItem('markdown') || '';
-    window.addEventListener('beforeunload', function (e) {
-      e.returnValue = '';
-    });
+    if (environment.production) {
+      window.addEventListener('beforeunload', function (e) {
+        e.returnValue = '';
+      });
+    }
   }
 
-  markdownChange() {
-    localStorage.setItem('markdown', this.markdown);
+  markdownChange = () => localStorage.setItem('markdown', this.markdown);
+
+  exportPDF() {
+    if (this.markdown) {
+      window.print();
+    } else {
+      alert('Seu arquivo está vazio, não é possível exportar!')
+    }
   }
 }

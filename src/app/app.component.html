@@ -1,10 +1,14 @@
 <div class="app">
   <header>
     <img class="logo" src="assets/images/logo.png" alt="">
+    <div class="icons">
+      <i class="fa fa-file-pdf-o" (click)="exportPDF()"></i>
+    </div>
   </header>
 
   <main>
-    <textarea [(ngModel)]="markdown" (ngModelChange)="markdownChange()" placeholder="Type your markdown here..."></textarea>
+    <textarea [(ngModel)]="markdown" (ngModelChange)="markdownChange()"
+      placeholder="Type your markdown here..."></textarea>
     <markdown class="variable-binding" [data]="markdown"></markdown>
   </main>
 </div>
